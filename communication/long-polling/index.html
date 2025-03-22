@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>Communication</title>
+</head>
+
+<body>
+    <div>Long polling</div>
+    <span></span>
+    <script>
+        async function fetchData(lastData) {
+            try {
+                const response = await fetch(`/getData?lastData=${lastData}`)
+                const result = await response.json()
+                document.querySelector("span").innerText = result.data;
+                fetchData(result.data) // once we receive the data, we have again called the fetch function
+            }
+            catch (error) {
+                console.log(error)
+                // handle if error on fetching long polling data
+            }
+        }
+        fetchData()
+    </script>
+</body>
+
+</html>
