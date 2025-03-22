@@ -1,0 +1,27 @@
+{
+  "name": "system-design",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon start communication/long-polling/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Romiljain258/system-design.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Romiljain258/system-design/issues"
+  },
+  "homepage": "https://github.com/Romiljain258/system-design#readme",
+  "dependencies": {
+    "@apollo/server": "^4.11.3",
+    "express": "^4.21.2",
+    "graphql": "^16.10.0",
+    "nodemon": "^3.1.9"
+  }
+}
