@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web socket</title>
+</head>
+
+<body>
+    <div>web socket</div>
+    <ul id="message"></ul>
+    <form id="form" action="">
+        <input id="input" autocomplete="off" />
+        <button type="submit">Send</button>
+    </form>
+
+    <!-- Removed the CDN link to socket.io.js. Socket.io is served by the server -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io(); // Create socket connection
+        const form = document.getElementById("form");
+        const input = document.getElementById("input");
+        const message = document.getElementById("message");
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            if (input.value) {
+                console.log(input.value);
+                socket.emit("chat message", input.value);
+                input.value = "";
+            }
+        });
+
+        socket.on("chat message", (msg) => {
+            const item = document.createElement("li");
+            item.textContent = msg;
+            message.appendChild(item);
+        });
+    </script>
+</body>
+
+</html>

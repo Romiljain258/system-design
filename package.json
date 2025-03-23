@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon start communication/long-polling/server.js",
+    "start": "nodemon start communication/web-socket/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +22,8 @@
     "@apollo/server": "^4.11.3",
     "express": "^4.21.2",
     "graphql": "^16.10.0",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "socket": "^0.14.66",
+    "socket.io": "^4.8.1"
   }
 }
