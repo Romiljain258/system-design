@@ -1,0 +1,4 @@
+1. go to the package.json file and change this line below -
+   nodemon start communication/server-sent-events/server.js
+
+2. Then start server by, npm run start

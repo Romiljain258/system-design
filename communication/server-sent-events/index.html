@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web socket</title>
+</head>
+
+<body>
+    <div>SSE</div>
+    <div id="sse-data"></div>
+
+    <script>
+        // we need to read event-stream data received from the server
+        // EventSource is a built-in HTML5 API that allows us to create a long-polling connection to the server
+        const sseData = document.getElementById("sse-data");
+        const eventSource = new EventSource('/sse');
+        eventSource.onmessage = (event) => {
+            console.log(event)
+            sseData.innerHTML = event.data
+        }
+    </script>
+</body>
+
+</html>
