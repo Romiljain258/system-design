@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <meta charset="" UTF-8">
+    <title>CSP</title>
+    <!-- this script won't execute because it has diff domain and added self in csp -->
+    <script src="http://unsecure.com/"></script>
+
+    <!-- All the script define with nonce can be executed -->
+    <script nonce="random-key">
+        console.log("My trusted script")
+    </script>
+
+<!-- this won't be executed by serve, as this is not conatins nonce -->
+    <script>
+        console.log("My non-trusted script")
+    </script>
+</head>
+
+<body>
+    <h1>CSP Page</h1>
+</body>
+
+</html>

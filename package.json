@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon start communication/server-sent-events/server.js",
+    "start": "nodemon start security/mitigation/csp/server.js",
+    "build": "webpack build communication/server-sent-events/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
